@@ -13,6 +13,7 @@
  
 .button-wrapper { 
   display: flex; 
+  margin-bottom: 10px;
 } 
  
 /* btn btn-outline-primary 역할 직접 구현 */ 

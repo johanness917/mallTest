@@ -10,10 +10,10 @@ const MainPage = () => {
         <Header />
         <div>
           {/* ✅ /about을 따옴표로 감싸야 합니다. */}
-          <Link to={"/todo/list?page=3&size=20"}>LINK ABOUT PAGE</Link> <br />
+          <Link to={"/todo/list?page=3&size=20"}>"LINK" ABOUT PAGE</Link> <br />
 
           {/* 💡 리액트에서는 <a> 태그보다 <Link> 사용을 권장합니다. */}
-          <a href="/about">A ABOUT PAGE</a>
+          <a href="/about">"A" ABOUT PAGE</a>
         </div>
         <main className="content-area">
           <div className="butten-wrapper">

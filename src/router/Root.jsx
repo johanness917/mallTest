@@ -52,7 +52,7 @@ const Root = createBrowserRouter([
     ),
   },
   {
-    path: "/todo/modify",
+    path: "/todo/modify/:tno",
     element: (
       <Suspense fallback={<Loading />}>
         <Modify />

@@ -29,7 +29,7 @@ export default function Header() {
                   <Link to="/todo/list" className="nav-link">LIST</Link>
                 </li>
                 <li>
-                  <Link to="/todo/read/{20}" className="nav-link">READ</Link>
+                  <Link to="/todo/read/20" className="nav-link">READ</Link>
                 </li>
                 <li>
                   <Link to="/todo/modify" className="nav-link">MODIFY</Link>
