@@ -3,15 +3,16 @@ import { createSearchParams, useNavigate, useSearchParams } from "react-router-d
 
 // "5" 존재하면 5 리턴하고, " 없으면 defalutValue 리턴하는 화살표함수"
 const getNum = (param, defaultValue) => {
+  // return (!param) ? (defaultValue) : parseInt(param); 삼항연산자로도 가능
   if (!param) {
     return defaultValue
   }
   return parseInt(param)
 }
 const useCustomMove = () => {
-  // <a></a>
   const navigate = useNavigate()
   const [refresh, setRefresh] = useState(false)
+
 
   // const queryDefault = "?page=2&size=10" 
   const [queryParams] = useSearchParams()
@@ -21,6 +22,7 @@ const useCustomMove = () => {
 
   // http://~~~/todo/list?page=1&size=10
   const moveToList = (pageParam) => {
+
     let queryStr = ""
     if (pageParam) {
       const pageNum = getNum(pageParam.page, page)
@@ -29,10 +31,10 @@ const useCustomMove = () => {
     } else {
       queryStr = queryDefault
     }
-
+    //"../todo/list?page=2&size=10"
     navigate({ pathname: `../todo/list`, search: queryStr })
+    setRefresh(!refresh);
   }
-
   // http://~~~/todo/modify/10?page=1&size=10
   const moveToModify = (num) => {
     console.log(queryDefault)
@@ -49,7 +51,7 @@ const useCustomMove = () => {
       search: queryDefault, //수정시에 기존의 쿼리 스트링 유지를 위해 
     });
   }
-  return { moveToList, moveToModify, moveToRead, page, size }  //moveToModify 추가 
+  return { moveToList, moveToModify, moveToRead, page, size, refresh }  //moveToModify 추가 
 }
 
 export default useCustomMove 
