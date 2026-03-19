@@ -12,6 +12,10 @@ const Modify = lazy(() => import("../pages/todo/ModifyPage"));
 const Add = lazy(() => import("../pages/todo/AddPage"));
 
 
+//*******member */
+const LoginPage = lazy(() => import("../pages/member/LoginPage"));
+const LogoutPage = lazy(() => import("../pages/member/LogoutPage"));
+
 const Root = createBrowserRouter([
   {
     path: "/",
@@ -69,6 +73,28 @@ const Root = createBrowserRouter([
       </Suspense>
     ),
   },
+  //******member */
+  {
+    path: "/member/login",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <LoginPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/member/logout",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <LogoutPage />
+      </Suspense>
+    ),
+  },
+
+
+
 ]);
+
+
 
 export default Root;
